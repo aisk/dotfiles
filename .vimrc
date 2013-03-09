@@ -5,13 +5,15 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'molokai'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'python.vim'
+Bundle 'clang-complete'
 
 " tabs and spaces handling
 set expandtab
@@ -41,6 +43,9 @@ set hlsearch
 " line numbers
 set nu
 
+colorscheme molokai
+
+let g:Powerline_symbols = 'unicode'
 
 " Ignore files on NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
