@@ -12,8 +12,9 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'molokai'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'python.vim'
+Bundle 'python.vim--Vasiliev'
 Bundle 'clang-complete'
+Bundle 'Tagbar'
 
 " tabs and spaces handling
 set expandtab
@@ -45,7 +46,13 @@ set nu
 
 colorscheme molokai
 
-let g:Powerline_symbols = 'unicode'
+if &term =~? 'mlterm\|xterm\|screen-256'
+    let &t_Co = 256
+endif
 
-" Ignore files on NERDTree
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
+
+let g:Powerline_symbols = 'fancy'
+
+" better python highlight
+let python_highlight_all = 1
