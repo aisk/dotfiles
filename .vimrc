@@ -15,6 +15,7 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'python.vim--Vasiliev'
 Bundle 'clang-complete'
 Bundle 'Tagbar'
+Bundle 'ctrlp.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -50,9 +51,13 @@ if &term =~? 'mlterm\|xterm\|screen-256'
     let &t_Co = 256
 endif
 
+" last position
+au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:Powerline_symbols = 'fancy'
 
 " better python highlight
+let python_highlight_space_errors = 0
 let python_highlight_all = 1
