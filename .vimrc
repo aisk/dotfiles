@@ -12,16 +12,13 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'molokai'
 Bundle 'Lokaltog/vim-powerline'
-"Bundle 'python.vim--Vasiliev'
-Bundle 'Gundo'
-Bundle 'Python-mode-klen'
+Bundle 'python.vim--Vasiliev'
 Bundle 'clang-complete'
-Bundle 'cqml.vim'
 Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
+Bundle 'VimClojure'
 Bundle 'vim-coffee-script'
-Bundle 'antlr3.vim'
-Bundle 'lbnf.vim'
+Bundle 'lemon.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -33,7 +30,8 @@ set shiftwidth=4
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-au bufreadpre,bufnewfile *.cf set ft=lbnf
+
+map tt :TagbarToggle<CR>
 
 filetype plugin indent on
 
@@ -67,7 +65,3 @@ let g:Powerline_symbols = 'fancy'
 " better python highlight
 let python_highlight_space_errors = 0
 let python_highlight_all = 1
-
-" disable pylint
-let g:pymode_lint = 0
-let g:pymode_folding = 0
