@@ -19,6 +19,8 @@ Bundle 'ctrlp.vim'
 Bundle 'VimClojure'
 Bundle 'vim-coffee-script'
 Bundle 'lemon.vim'
+Bundle 'antlr3.vim'
+Bundle 'lbnf.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -30,6 +32,7 @@ set shiftwidth=4
 autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+au bufreadpre,bufnewfile *.cf set ft=lbnf
 
 map tt :TagbarToggle<CR>
 
