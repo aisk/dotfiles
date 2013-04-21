@@ -21,6 +21,7 @@ Bundle 'vim-coffee-script'
 Bundle 'lemon.vim'
 Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
+Bundle 'ack.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -35,6 +36,7 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
 map tt :TagbarToggle<CR>
+map nt :NERDTreeToggle<CR>
 
 filetype plugin indent on
 
@@ -53,6 +55,10 @@ set hlsearch
 set nu
 
 colorscheme molokai
+
+if has('gui_running')
+    set guifont=Monaco\ for\ Powerline:h12
+endif
 
 if &term =~? 'mlterm\|xterm\|screen-256'
     let &t_Co = 256
