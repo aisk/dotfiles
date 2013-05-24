@@ -22,6 +22,7 @@ Bundle 'lemon.vim'
 Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
 Bundle 'ack.vim'
+Bundle 'arsenerei/vim-ragel'
 
 " tabs and spaces handling
 set expandtab
@@ -35,8 +36,8 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
-map tt :TagbarToggle<CR>
-map nt :NERDTreeToggle<CR>
+map ,t :TagbarToggle<CR>
+map ,n :NERDTreeToggle<CR>
 
 filetype plugin indent on
 
