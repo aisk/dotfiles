@@ -23,6 +23,7 @@ Bundle 'lemon.vim'
 Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
 Bundle 'ack.vim'
+Bundle 'wting/rust.vim'
 Bundle 'arsenerei/vim-ragel'
 Bundle 'scrooloose/syntastic'
 
