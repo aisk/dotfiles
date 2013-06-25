@@ -1,4 +1,5 @@
 set nocompatible               " be iMproved
+filetype on                    " 
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -23,6 +24,7 @@ Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
 Bundle 'ack.vim'
 Bundle 'arsenerei/vim-ragel'
+Bundle 'scrooloose/syntastic'
 
 " tabs and spaces handling
 set expandtab
@@ -75,3 +77,7 @@ let g:Powerline_symbols = 'fancy'
 " better python highlight
 let python_highlight_space_errors = 0
 let python_highlight_all = 1
+
+
+let g:syntastic_check_on_open = 0
+let g:syntastic_python_flake8_args='--ignore=E501'
