@@ -25,6 +25,7 @@ Bundle 'lbnf.vim'
 Bundle 'ack.vim'
 Bundle 'wting/rust.vim'
 Bundle 'arsenerei/vim-ragel'
+Bundle 'fugitive.vim'
 Bundle 'scrooloose/syntastic'
 
 " tabs and spaces handling
