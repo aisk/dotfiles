@@ -27,6 +27,8 @@ Bundle 'wting/rust.vim'
 Bundle 'arsenerei/vim-ragel'
 Bundle 'fugitive.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'jdevera/vim-protobuf-syntax'
+Bundle 'terryma/vim-multiple-cursors'
 
 " tabs and spaces handling
 set expandtab
@@ -35,9 +37,10 @@ set softtabstop=4
 set shiftwidth=4
 
 " tablength exceptions
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+" autocmd FileType html setlocal shiftwidth=2 tabstop=2
+" autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
+" autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+" autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
 map ,t :TagbarToggle<CR>
