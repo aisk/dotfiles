@@ -1,5 +1,5 @@
 set nocompatible               " be iMproved
-filetype on                    " 
+" filetype on                    " 
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -13,12 +13,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'molokai'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'python.vim--Vasiliev'
-Bundle 'clang-complete'
 Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
 Bundle 'VimClojure'
-Bundle 'vim-coffee-script'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'lemon.vim'
 Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
@@ -53,6 +51,8 @@ filetype plugin indent on
 
 syntax on
 
+:set backspace=indent,eol,start  " wtf?
+
 " always show status bar
 set ls=2
 
@@ -81,11 +81,6 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:Powerline_symbols = 'fancy'
-
-" better python highlight
-let python_highlight_space_errors = 0
-let python_highlight_all = 1
-
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
