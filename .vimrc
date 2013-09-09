@@ -1,5 +1,5 @@
 set nocompatible               " be iMproved
-" filetype on                    " 
+filetype on                    " 
 filetype off                   " required!
 
 set rtp+=~/.vim/bundle/vundle/
@@ -20,6 +20,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'lemon.vim'
 Bundle 'antlr3.vim'
 Bundle 'lbnf.vim'
+Bundle 'less.vim'
 Bundle 'ack.vim'
 Bundle 'wting/rust.vim'
 Bundle 'arsenerei/vim-ragel'
@@ -27,6 +28,7 @@ Bundle 'fugitive.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'jdevera/vim-protobuf-syntax'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'pfdevilliers/Pretty-Vim-Python'
 
 " tabs and spaces handling
 set expandtab
@@ -68,9 +70,9 @@ if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
 endif
 
-if &term =~? 'mlterm\|xterm\|screen-256'
-    let &t_Co = 256
-endif
+" if &term =~? 'mlterm\|xterm\|screen-256'
+"     let &t_Co = 256
+" endif
 
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -78,6 +80,8 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:Powerline_symbols = 'fancy'
+
+let python_highlight_all = 1
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
