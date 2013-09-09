@@ -29,6 +29,8 @@ Bundle 'scrooloose/syntastic'
 Bundle 'jdevera/vim-protobuf-syntax'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'pfdevilliers/Pretty-Vim-Python'
+Bundle 'juvenn/mustache.vim'
+Bundle 'html5.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -41,6 +43,7 @@ set shiftwidth=4
 " autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 " autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 " autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
+
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
 map ,t :TagbarToggle<CR>
