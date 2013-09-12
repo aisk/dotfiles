@@ -49,6 +49,8 @@ au bufreadpre,bufnewfile *.cf set ft=lbnf
 map ,t :TagbarToggle<CR>
 map ,n :NERDTreeToggle<CR>
 
+cmap w!! %!sudo tee > /dev/null %
+
 filetype plugin indent on
 
 syntax on
