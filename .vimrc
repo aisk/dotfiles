@@ -31,6 +31,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'pfdevilliers/Pretty-Vim-Python'
 Bundle 'juvenn/mustache.vim'
 Bundle 'html5.vim'
+Bundle 'Yggdroot/indentLine'
 
 " tabs and spaces handling
 set expandtab
@@ -90,3 +91,5 @@ let python_highlight_all = 1
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
+
+let g:indentLine_color_term = 239

@@ -7,6 +7,7 @@
 
 (defvar my-packages
   '(better-defaults
+    tabbar
     go-mode
     markdown-mode
     js2-mode
@@ -34,13 +35,18 @@
 
 (load-theme 'tango-dark t)
 
+(require 'tabbar)
+(tabbar-mode t)
+(global-set-key [(meta j)] 'tabbar-backward)
+(global-set-key [(meta k)] 'tabbar-forward)
+
 ;; all backups goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
 ;; 显示行号
 (global-linum-mode t)
 (custom-set-variables
- '(linum-format (quote "%3d | ")))
+ '(linum-format (quote "%3d \u2502")))
 
 ;; 平滑滚动
 (setq scroll-step 1
