@@ -32,6 +32,7 @@ Bundle 'pfdevilliers/Pretty-Vim-Python'
 Bundle 'juvenn/mustache.vim'
 Bundle 'html5.vim'
 Bundle 'Yggdroot/indentLine'
+Bundle 'fishman/vim-vala'
 
 " tabs and spaces handling
 set expandtab
@@ -79,6 +80,7 @@ endif
 " if &term =~? 'mlterm\|xterm\|screen-256'
 "     let &t_Co = 256
 " endif
+let &t_Co = 256
 
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
