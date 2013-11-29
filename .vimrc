@@ -12,6 +12,8 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'molokai'
+Bundle 'godlygeek/tabular'
+Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
@@ -28,11 +30,11 @@ Bundle 'fugitive.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'jdevera/vim-protobuf-syntax'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'pfdevilliers/Pretty-Vim-Python'
 Bundle 'juvenn/mustache.vim'
 Bundle 'html5.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fishman/vim-vala'
+Bundle 'scons.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -89,9 +91,9 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:Powerline_symbols = 'fancy'
 
-let python_highlight_all = 1
-
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
+
+let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 239
