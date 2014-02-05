@@ -35,6 +35,7 @@ Bundle 'html5.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fishman/vim-vala'
 Bundle 'scons.vim'
+Bundle 'Shougo/unite.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -93,6 +94,7 @@ let g:Powerline_symbols = 'fancy'
 
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 let g:EasyMotion_leader_key = '<Leader>'
 
