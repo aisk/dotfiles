@@ -36,6 +36,7 @@ Bundle 'Yggdroot/indentLine'
 Bundle 'fishman/vim-vala'
 Bundle 'scons.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'ekalinin/Dockerfile.vim'
 
 " tabs and spaces handling
 set expandtab
