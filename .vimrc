@@ -37,6 +37,8 @@ Bundle 'fishman/vim-vala'
 Bundle 'scons.vim'
 Bundle 'Shougo/unite.vim'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'mikewest/vimroom'
+Bundle 'jistr/vim-nerdtree-tabs'
 
 " tabs and spaces handling
 set expandtab
@@ -53,7 +55,8 @@ autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
 map ,t :TagbarToggle<CR>
-map ,n :NERDTreeToggle<CR>
+" map ,n :NERDTreeToggle<CR>
+map ,n <plug>NERDTreeTabsToggle<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 
@@ -79,6 +82,8 @@ colorscheme molokai
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
+    set guioptions-=L "隐藏左侧滚动条
+    set guioptions+=r "显示右侧滚动条
 endif
 
 " if &term =~? 'mlterm\|xterm\|screen-256'
