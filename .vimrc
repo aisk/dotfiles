@@ -10,8 +10,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'scrooloose/nerdtree'
-Bundle 'jnwhiteh/vim-golang'
+Bundle 'Blackrush/vim-gocode'
 Bundle 'molokai'
+" Bundle 'ervandew/supertab'
+Bundle 'Rip-Rip/clang_complete'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
@@ -39,6 +41,8 @@ Bundle 'Shougo/unite.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'mikewest/vimroom'
 Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'sjl/vitality.vim'
+Bundle 'slim-template/vim-slim'
 
 " tabs and spaces handling
 set expandtab
@@ -51,6 +55,7 @@ autocmd FileType html setlocal shiftwidth=2 tabstop=2
 autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
+autocmd FileType slim setlocal shiftwidth=2 tabstop=2
 
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
@@ -94,6 +99,15 @@ let &t_Co = 256
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
+" clang path on osx
+let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+if isdirectory(s:clang_library_path)
+    let g:clang_library_path=s:clang_library_path
+endif
+
+" disable ominicomplete preview
+set completeopt-=preview
+
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:Powerline_symbols = 'fancy'
@@ -105,3 +119,31 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 239
+
+let g:tagbar_type_go = {
+    \ 'ctagstype' : 'go',
+    \ 'kinds'     : [
+        \ 'p:package',
+        \ 'i:imports:1',
+        \ 'c:constants',
+        \ 'v:variables',
+        \ 't:types',
+        \ 'n:interfaces',
+        \ 'w:fields',
+        \ 'e:embedded',
+        \ 'm:methods',
+        \ 'r:constructor',
+        \ 'f:functions'
+    \ ],
+    \ 'sro' : '.',
+    \ 'kind2scope' : {
+        \ 't' : 'ctype',
+        \ 'n' : 'ntype'
+    \ },
+    \ 'scope2kind' : {
+        \ 'ctype' : 't',
+        \ 'ntype' : 'n'
+    \ },
+    \ 'ctagsbin'  : 'gotags',
+    \ 'ctagsargs' : '-sort -silent'
+    \ }

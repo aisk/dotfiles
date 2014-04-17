@@ -43,5 +43,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bi
 export PATH=$(brew --prefix ruby)/bin:$PATH
 export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk//tools
 export GOPATH=~/.go
+export PATH=${PATH}:~/.go/bin
 export DOCKER_HOST=tcp://localhost:4243
 export RIPPAY_ENV=development
