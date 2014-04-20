@@ -13,10 +13,13 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'molokai'
 " Bundle 'ervandew/supertab'
+Bundle 'scons.vim'
+Bundle 'pythoncomplete'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/vim-powerline'
+" Bundle 'bling/vim-airline'
 Bundle 'Tagbar'
 Bundle 'ctrlp.vim'
 Bundle 'VimClojure'
@@ -43,6 +46,7 @@ Bundle 'mikewest/vimroom'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
+Bundle 'derekwyatt/vim-scala'
 
 " tabs and spaces handling
 set expandtab
@@ -110,8 +114,6 @@ set completeopt-=preview
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
-let g:Powerline_symbols = 'fancy'
-
 let g:syntastic_check_on_open = 0
 let g:syntastic_python_flake8_args='--ignore=E501'
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
@@ -119,6 +121,11 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 239
+
+let g:Powerline_symbols = 'fancy'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
