@@ -46,5 +46,8 @@ if [ $(uname) = 'Darwin' ]; then
     . `brew --prefix`/etc/profile.d/z.sh
     export PATH=$(brew --prefix ruby)/bin:$PATH
     export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk//tools
+    if [ -d ~/.rvm ]; then
+        export PATH=${PATH}:~/.rvm/bin
+    fi
     export DOCKER_HOST=tcp://localhost:4243
 fi
