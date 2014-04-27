@@ -39,12 +39,14 @@ source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export GOPATH=~/.go:~/Codes/go
-export PATH=${PATH}:~/.go/bin
+export PATH=$PATH:~/.go/bin
 
 if [ $(uname) = 'Darwin' ]; then
-    export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin
-    . `brew --prefix`/etc/profile.d/z.sh
-    export PATH=$(brew --prefix ruby)/bin:$PATH
-    export PATH=${PATH}:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk//tools
+    export PATH=/usr/local/bin:$PATH
+    export PATH=$PATH:/usr/local/share/npm/bin
+    #export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin
+    export PATH=$PATH:$(brew --prefix ruby)/bin
+    export PATH=$PATH:/Applications/Android\ Studio.app/sdk/platform-tools:/Applications/Android\ Studio.app/sdk//tools
     export DOCKER_HOST=tcp://localhost:4243
+    . `brew --prefix`/etc/profile.d/z.sh
 fi

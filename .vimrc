@@ -13,7 +13,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'molokai'
 " Bundle 'ervandew/supertab'
-Bundle 'scons.vim'
 Bundle 'pythoncomplete'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'godlygeek/tabular'
@@ -46,7 +45,8 @@ Bundle 'mikewest/vimroom'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
-Bundle 'derekwyatt/vim-scala'
+" Bundle 'derekwyatt/vim-scala'
+Bundle 'tpope/vim-rails'
 
 " tabs and spaces handling
 set expandtab
@@ -60,6 +60,7 @@ autocmd FileType htmldjango setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType slim setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
@@ -114,8 +115,8 @@ set completeopt-=preview
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
-let g:syntastic_check_on_open = 0
-let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_check_on_open = 1
+" let g:syntastic_python_flake8_args='--ignore=E501'
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 let g:EasyMotion_leader_key = '<Leader>'
