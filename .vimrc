@@ -12,7 +12,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'molokai'
-" Bundle 'ervandew/supertab'
+Bundle 'ervandew/supertab'
 Bundle 'pythoncomplete'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'godlygeek/tabular'
@@ -39,14 +39,13 @@ Bundle 'html5.vim'
 Bundle 'Yggdroot/indentLine'
 Bundle 'fishman/vim-vala'
 Bundle 'scons.vim'
-Bundle 'Shougo/unite.vim'
 Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'mikewest/vimroom'
-Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
 " Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-rails'
+Bundle 'fholgado/minibufexpl.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -64,9 +63,11 @@ autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 
+map ,h :bp<CR>
+map ,l :bn<CR>
+
 map ,t :TagbarToggle<CR>
-" map ,n :NERDTreeToggle<CR>
-map ,n <plug>NERDTreeTabsToggle<CR>
+map ,n :NERDTreeToggle<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 
@@ -127,6 +128,8 @@ let g:Powerline_symbols = 'fancy'
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
 let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
