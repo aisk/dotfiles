@@ -46,6 +46,7 @@ Bundle 'slim-template/vim-slim'
 " Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-rails'
 Bundle 'fholgado/minibufexpl.vim'
+Bundle 'zah/nimrod.vim'
 
 " tabs and spaces handling
 set expandtab
@@ -75,7 +76,7 @@ filetype plugin indent on
 
 syntax on
 
-:set backspace=indent,eol,start  " wtf?
+set backspace=indent,eol,start  " wtf?
 
 " always show status bar
 set ls=2
