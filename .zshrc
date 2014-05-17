@@ -33,7 +33,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails)
+plugins=(git python pip rails)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,8 +41,8 @@ source $ZSH/oh-my-zsh.sh
 
 if [ $(uname) = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
-    export PATH=$PATH:/usr/local/share/npm/bin
-    export PATH=$PATH:$(brew --prefix ruby)/bin
+    export PATH=/usr/local/share/npm/bin:$PATH
+    export PATH=$(brew --prefix ruby)/bin:$PATH
     if [ -d ~/.rvm ]; then
         export PATH=${PATH}:~/.rvm/bin
     fi
