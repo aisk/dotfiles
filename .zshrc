@@ -43,11 +43,12 @@ if [ $(uname) = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
     export PATH=/usr/local/share/npm/bin:$PATH
     export PATH=$(brew --prefix ruby)/bin:$PATH
-    if [ -d ~/.rvm ]; then
-        export PATH=${PATH}:~/.rvm/bin
-    fi
     export DOCKER_HOST=tcp://localhost:4243
     . `brew --prefix`/etc/profile.d/z.sh
+fi
+
+if [ -d ~/.rvm ]; then
+    export PATH=${PATH}:~/.rvm/bin
 fi
 
 export GOPATH=~/.go:~/Codes/go
