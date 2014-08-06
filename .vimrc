@@ -13,7 +13,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'molokai'
 Bundle 'ervandew/supertab'
-Bundle 'pythoncomplete'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-easymotion'
@@ -42,12 +41,15 @@ Bundle 'ekalinin/Dockerfile.vim'
 Bundle 'mikewest/vimroom'
 Bundle 'sjl/vitality.vim'
 Bundle 'slim-template/vim-slim'
-" Bundle 'derekwyatt/vim-scala'
 Bundle 'tpope/vim-rails'
 Bundle 'fholgado/minibufexpl.vim'
 Bundle 'zah/nimrod.vim'
 Bundle 'toyamarinyon/vim-swift'
 " Bundle 'gilligan/vim-lldb'
+Bundle 'arc.vim'
+Bundle 'wlangstroth/vim-racket'
+Bundle 'hylang/vim-hy'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 " tabs and spaces handling
 set expandtab
@@ -64,6 +66,8 @@ autocmd FileType slim setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 au bufreadpre,bufnewfile *.cf set ft=lbnf
+au bufreadpre,bufnewfile *.arc set ft=arc
+au bufreadpre,bufnewfile *SConstruct set ft=scons
 
 map ,h :bp<CR>
 map ,l :bn<CR>
