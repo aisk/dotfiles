@@ -1,11 +1,13 @@
 #! /usr/bin/env sh
 
-ln -sf $PWD/.vimrc ~/.vimrc
-ln -sf $PWD/.axelrc ~/.axelrc
-ln -sf $PWD/.emacs ~/.emacs
-ln -sf $PWD/.irbrc ~/.irbrc
-ln -sf $PWD/.pryrc ~/.pryrc
-ln -sf $PWD/.zshrc ~/.zshrc
+BASEDIR=$(dirname $0)
+
+ln -sf $BASEDIR/.vimrc ~/.vimrc
+ln -sf $BASEDIR/.axelrc ~/.axelrc
+ln -sf $BASEDIR/.emacs ~/.emacs
+ln -sf $BASEDIR/.irbrc ~/.irbrc
+ln -sf $BASEDIR/.pryrc ~/.pryrc
+ln -sf $BASEDIR/.zshrc ~/.zshrc
 if [ ! -d ~/.vim/bundle ]; then
     git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 fi
