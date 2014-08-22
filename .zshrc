@@ -51,8 +51,8 @@ if [ -d ~/.rvm ]; then
     export PATH=${PATH}:~/.rvm/bin
 fi
 
-export GOPATH=~/.go:~/Codes/go
-export PATH=$PATH:~/.go/bin
+export GOPATH=~/Codes/go
+export PATH=$PATH:~/Codes/go/bin
 export EDITOR=vim
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
