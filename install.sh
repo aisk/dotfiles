@@ -6,6 +6,7 @@ ln -sf $PWD/.emacs ~/.emacs
 ln -sf $PWD/.irbrc ~/.irbrc
 ln -sf $PWD/.pryrc ~/.pryrc
 ln -sf $PWD/.zshrc ~/.zshrc
+ln -sf $PWD/.minttyrc ~/.minttyrc
 mkdir -p $HOME/.ipython/profile_default
 ln -sf $PWD/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 if [ ! -d ~/.vim/bundle ]; then
