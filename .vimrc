@@ -2,54 +2,48 @@ set nocompatible               " be iMproved
 filetype on                    " 
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
+Plug 'scrooloose/nerdtree'
+Plug 'Blackrush/vim-gocode'
+Plug 'molokai'
+Plug 'ervandew/supertab'
+Plug 'Rip-Rip/clang_complete'
+Plug 'godlygeek/tabular'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'bling/vim-airline'
+Plug 'Tagbar'
+Plug 'ctrlp.vim'
+Plug 'VimClojure'
+Plug 'kchmck/vim-coffee-script'
+Plug 'antlr3.vim'
+Plug 'lbnf.vim'
+Plug 'less.vim'
+Plug 'rking/ag.vim'
+Plug 'wting/rust.vim'
+Plug 'arsenerei/vim-ragel'
+Plug 'fugitive.vim'
+Plug 'scrooloose/syntastic'
+Plug 'jdevera/vim-protobuf-syntax'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'juvenn/mustache.vim'
+Plug 'html5.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'fishman/vim-vala'
+Plug 'scons.vim'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'mikewest/vimroom'
+Plug 'sjl/vitality.vim'
+Plug 'slim-template/vim-slim'
+Plug 'tpope/vim-rails'
+Plug 'zah/nimrod.vim'
+Plug 'toyamarinyon/vim-swift'
+Plug 'arc.vim'
+Plug 'wlangstroth/vim-racket'
+Plug 'hylang/vim-hy'
+Plug 'chriskempson/vim-tomorrow-theme'
 
-Bundle 'scrooloose/nerdtree'
-Bundle 'Blackrush/vim-gocode'
-Bundle 'molokai'
-Bundle 'ervandew/supertab'
-Bundle 'Rip-Rip/clang_complete'
-Bundle 'godlygeek/tabular'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Lokaltog/vim-powerline'
-" Bundle 'bling/vim-airline'
-Bundle 'Tagbar'
-Bundle 'ctrlp.vim'
-Bundle 'VimClojure'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'antlr3.vim'
-Bundle 'lbnf.vim'
-Bundle 'less.vim'
-Bundle 'rking/ag.vim'
-Bundle 'wting/rust.vim'
-Bundle 'arsenerei/vim-ragel'
-Bundle 'fugitive.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'jdevera/vim-protobuf-syntax'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'juvenn/mustache.vim'
-Bundle 'html5.vim'
-Bundle 'Yggdroot/indentLine'
-Bundle 'fishman/vim-vala'
-Bundle 'scons.vim'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'mikewest/vimroom'
-Bundle 'sjl/vitality.vim'
-Bundle 'slim-template/vim-slim'
-Bundle 'tpope/vim-rails'
-Bundle 'fholgado/minibufexpl.vim'
-Bundle 'zah/nimrod.vim'
-Bundle 'toyamarinyon/vim-swift'
-" Bundle 'gilligan/vim-lldb'
-Bundle 'arc.vim'
-Bundle 'wlangstroth/vim-racket'
-Bundle 'hylang/vim-hy'
-Bundle 'chriskempson/vim-tomorrow-theme'
+call plug#end()
 
 " tabs and spaces handling
 set expandtab
@@ -103,10 +97,9 @@ if has('gui_running')
     set guioptions+=r "显示右侧滚动条
 endif
 
-" if &term =~? 'mlterm\|xterm\|screen-256'
-"     let &t_Co = 256
-" endif
-let &t_Co = 256
+if &term =~? 'mlterm\|xterm\|screen-256'
+    let &t_Co = 256
+endif
 
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -122,18 +115,12 @@ set completeopt-=preview
 
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
-let g:syntastic_check_on_open = 1
-" let g:syntastic_python_flake8_args='--ignore=E501'
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
-
 let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 239
 
-let g:Powerline_symbols = 'fancy'
-
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
@@ -166,9 +153,11 @@ let g:tagbar_type_go = {
     \ }
 
 " syntastic
+let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_flake8_args = "--ignore=E501"
+let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " ctrlp
 let g:ctrlp_extensions = ['tag']
