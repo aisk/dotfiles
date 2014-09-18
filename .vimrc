@@ -27,7 +27,6 @@ Plug 'scrooloose/syntastic'
 Plug 'jdevera/vim-protobuf-syntax'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'juvenn/mustache.vim'
-Plug 'html5.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'fishman/vim-vala'
 Plug 'scons.vim'
@@ -120,7 +119,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:indentLine_color_term = 239
 
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
