@@ -9,6 +9,8 @@ ln -sf $BASEDIR/.irbrc ~/.irbrc
 ln -sf $BASEDIR/.pryrc ~/.pryrc
 ln -sf $BASEDIR/.zshrc ~/.zshrc
 ln -sf $BASEDIR/.minttyrc ~/.minttyrc
-if [ ! -d ~/.vim/bundle ]; then
-    git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+if [ ! -d ~/.vim/autoload ]; then
+    mkdir -p ~/.vim/autoload
+    curl -fLo ~/.vim/autoload/plug.vim \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
