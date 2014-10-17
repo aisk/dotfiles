@@ -41,6 +41,9 @@ Plug 'arc.vim'
 Plug 'wlangstroth/vim-racket'
 Plug 'hylang/vim-hy'
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'guns/vim-clojure-static'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'briancollins/vim-jst'
 
 call plug#end()
 
@@ -70,9 +73,9 @@ map ,n :NERDTreeToggle<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 
-filetype plugin indent on
-
 syntax on
+
+filetype plugin indent on
 
 set backspace=indent,eol,start  " wtf?
 
