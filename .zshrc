@@ -43,7 +43,6 @@ if [ $(uname) = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
     export PATH=/usr/local/share/npm/bin:$PATH
     export PATH=$(brew --prefix ruby)/bin:$PATH
-    export DOCKER_HOST=tcp://localhost:4243
     . `brew --prefix`/etc/profile.d/z.sh
 fi
 
