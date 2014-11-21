@@ -120,7 +120,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:EasyMotion_leader_key = '<Leader>'
 
-" let g:indentLine_color_term = 239
+let g:indentLine_color_term = 239
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
