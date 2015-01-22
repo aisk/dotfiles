@@ -41,7 +41,7 @@ source $ZSH/oh-my-zsh.sh
 
 if [ $(uname) = 'Darwin' ]; then
     export PATH=/usr/local/bin:$PATH
-    export PATH=/usr/local/share/npm/bin:$PATH
+    # export PATH=/usr/local/share/npm/bin:$PATH
     export PATH=$(brew --prefix ruby)/bin:$PATH
     . `brew --prefix`/etc/profile.d/z.sh
 fi
