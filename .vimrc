@@ -44,6 +44,7 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'guns/vim-clojure-static'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'briancollins/vim-jst'
+Plug 'Superbil/llvm.vim'
 
 call plug#end()
 
@@ -173,7 +174,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_flake8_args = "--ignore=E501"
-let g:syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'java'] }
 
 " ctrlp
 let g:ctrlp_extensions = ['tag']
