@@ -10,6 +10,7 @@ Plug 'Blackrush/vim-gocode'
 Plug 'molokai'
 Plug 'digitaltoad/vim-jade'
 Plug 'cespare/vim-toml'
+Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'Rip-Rip/clang_complete'
 Plug 'godlygeek/tabular'
@@ -92,7 +93,7 @@ set hlsearch
 " line numbers
 set nu
 
-colorscheme molokai
+colorscheme Tomorrow-Night
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
