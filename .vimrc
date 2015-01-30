@@ -19,12 +19,14 @@ Plug 'bling/vim-airline'
 Plug 'Tagbar'
 Plug 'ctrlp.vim'
 Plug 'VimClojure'
+Plug 'w0ng/vim-hybrid'
 Plug 'kchmck/vim-coffee-script'
+Plug 'jelera/vim-javascript-syntax'
 Plug 'antlr3.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
 Plug 'rking/ag.vim'
-Plug 'wting/rust.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'arsenerei/vim-ragel'
 Plug 'fugitive.vim'
 Plug 'scrooloose/syntastic'
@@ -93,7 +95,9 @@ set hlsearch
 " line numbers
 set nu
 
-colorscheme Tomorrow-Night
+" colorscheme Tomorrow-Night
+let g:hybrid_use_iTerm_colors = 1
+colorscheme hybrid
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
