@@ -5,6 +5,7 @@ filetype off                   " required!
 call plug#begin('~/.vim/plugged')
 
 Plug 'a.vim'
+Plug 'zah/nimrod.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Blackrush/vim-gocode'
 Plug 'molokai'
