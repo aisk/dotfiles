@@ -5,9 +5,12 @@ filetype off                   " required!
 call plug#begin('~/.vim/plugged')
 
 Plug 'a.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'dart-lang/dart-vim-plugin'
 Plug 'zah/nimrod.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Blackrush/vim-gocode'
+Plug 'enthooz/vim-razor'
 Plug 'molokai'
 Plug 'digitaltoad/vim-jade'
 Plug 'cespare/vim-toml'
@@ -17,6 +20,7 @@ Plug 'Rip-Rip/clang_complete'
 Plug 'godlygeek/tabular'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
+Plug 'raichoo/purescript-vim'
 Plug 'Tagbar'
 Plug 'ctrlp.vim'
 Plug 'VimClojure'
@@ -29,7 +33,6 @@ Plug 'less.vim'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'dag/vim2hs'
-Plug 'arsenerei/vim-ragel'
 Plug 'fugitive.vim'
 Plug 'scrooloose/syntastic'
 Plug 'jdevera/vim-protobuf-syntax'
@@ -50,6 +53,8 @@ Plug 'guns/vim-clojure-static'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'briancollins/vim-jst'
 Plug 'Superbil/llvm.vim'
+Plug 'phildawes/racer'
+" Plug 'mxw/vim-jsx'
 
 call plug#end()
 
@@ -162,26 +167,19 @@ let g:tagbar_type_go = {
     \ 'ctagsargs' : '-sort -silent'
     \ }
 
-let g:tagbar_type_rust = {
-    \ 'ctagstype' : 'rust',
-    \ 'kinds' : [
-        \'T:types,type definitions',
-        \'f:functions,function definitions',
-        \'g:enum,enumeration names',
-        \'s:structure names',
-        \'m:modules,module names',
-        \'c:consts,static constants',
-        \'t:traits,traits',
-        \'i:impls,trait implementations',
-    \]
-    \}
-
 " syntastic
 let g:syntastic_check_on_open = 1
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 let g:syntastic_python_flake8_args = "--ignore=E501"
 let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'java'] }
+" let g:syntastic_javascript_checkers = []
 
 " ctrlp
 let g:ctrlp_extensions = ['tag']
+
+" react
+let g:jsx_ext_required = 0
+
+" racer
+let $RUST_SRC_PATH="/Users/asaka/Codes/rust/src/"
