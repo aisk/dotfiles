@@ -54,4 +54,6 @@ export GOPATH=~/Codes/go
 export PATH=$PATH:~/Codes/go/bin
 export EDITOR=vim
 
-eval "$(pyenv init -)"
+if [ -d ~/.pyenv ]; then
+    eval "$(pyenv init -)"
+fi
