@@ -57,3 +57,9 @@ export EDITOR=vim
 if [ -d ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
+
+if [ -f $HOME/.boot2docker_profile ]; then
+    source $HOME/.boot2docker_profile
+fi
+
+alias vim=nvim
