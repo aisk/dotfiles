@@ -57,3 +57,5 @@ export EDITOR=vim
 if [ -d ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
+
+alias vim=nvim

@@ -124,6 +124,9 @@ let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
 if isdirectory(s:clang_library_path)
     let g:clang_library_path=s:clang_library_path
 endif
+let g:clang_use_library = 1
+let g:clang_complete_auto = 1
+let g:clang_snippets = 1
 
 " disable ominicomplete preview
 set completeopt-=preview
