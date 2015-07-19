@@ -10,8 +10,10 @@
     tabbar
     go-mode
     markdown-mode
+    powerline
     js2-mode
     coffee-mode
+    monokai-theme
     scss-mode)
     "A list of packages to ensure are installed at launch.")
 
@@ -33,20 +35,31 @@
 
 (my-install-packages)
 
-(load-theme 'tango-dark t)
+(load-theme 'monokai t)
 
 (require 'tabbar)
 (tabbar-mode t)
-(global-set-key [(meta j)] 'tabbar-backward)
-(global-set-key [(meta k)] 'tabbar-forward)
+(setq tabbar-buffer-groups-function
+      (lambda ()
+        (list "All Buffers")))
+(setq tabbar-buffer-list-function
+      (lambda ()
+        (remove-if
+         (lambda(buffer)
+           (find (aref (buffer-name buffer) 0) " *"))
+                  (buffer-list))))
+; (global-set-key [(meta j)] 'tabbar-backward)
+; (global-set-key [(meta k)] 'tabbar-forward)
 
+(require 'powerline)
+(powerline-default-theme)
 ;; all backups goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
 ;; 显示行号
-(global-linum-mode t)
-(custom-set-variables
- '(linum-format (quote "%3d \u2502")))
+; (global-linum-mode t)
+; (custom-set-variables
+;   '(linum-format (quote "%2d \u2502")))
 
 ;; 平滑滚动
 (setq scroll-step 1
