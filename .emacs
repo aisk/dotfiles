@@ -13,9 +13,11 @@
     powerline
     js2-mode
     coffee-mode
+    evil
     monokai-theme
     scss-mode)
-    "A list of packages to ensure are installed at launch.")
+    "A list of packages
+ to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()
   (loop for p in my-packages
@@ -37,6 +39,9 @@
 
 (load-theme 'monokai t)
 
+(require 'evil)
+(evil-mode 1)
+
 (require 'tabbar)
 (tabbar-mode t)
 (setq tabbar-buffer-groups-function
@@ -56,12 +61,12 @@
 ;; all backups goto ~/.backups instead in the current directory
 (setq backup-directory-alist (quote (("." . "~/.backups"))))
 
-;; 显示行号
+;; show line number
 ; (global-linum-mode t)
 ; (custom-set-variables
 ;   '(linum-format (quote "%2d \u2502")))
 
-;; 平滑滚动
+;; smooth scroll
 (setq scroll-step 1
   scroll-margin 0
   scroll-preserve-screen-position 1
