@@ -13,7 +13,6 @@
     powerline
     js2-mode
     coffee-mode
-    evil
     monokai-theme
     scss-mode)
     "A list of packages
@@ -38,9 +37,6 @@
 (my-install-packages)
 
 (load-theme 'monokai t)
-
-(require 'evil)
-(evil-mode 1)
 
 (require 'tabbar)
 (tabbar-mode t)
