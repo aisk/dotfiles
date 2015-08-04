@@ -38,6 +38,8 @@
 
 (load-theme 'monokai t)
 
+(setq visible-bell ())
+
 (require 'tabbar)
 (tabbar-mode t)
 (setq tabbar-buffer-groups-function
