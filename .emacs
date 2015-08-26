@@ -8,12 +8,14 @@
 (defvar my-packages
   '(better-defaults
     tabbar
+    jedi
     go-mode
     markdown-mode
     powerline
     js2-mode
     coffee-mode
     monokai-theme
+    haskell-mode
     scss-mode)
     "A list of packages
  to ensure are installed at launch.")
@@ -38,21 +40,14 @@
 
 (load-theme 'monokai t)
 
+(setq inhibit-startup-message t)
+
 (setq visible-bell ())
 
-(require 'tabbar)
-(tabbar-mode t)
-(setq tabbar-buffer-groups-function
-      (lambda ()
-        (list "All Buffers")))
-(setq tabbar-buffer-list-function
-      (lambda ()
-        (remove-if
-         (lambda(buffer)
-           (find (aref (buffer-name buffer) 0) " *"))
-                  (buffer-list))))
-; (global-set-key [(meta j)] 'tabbar-backward)
-; (global-set-key [(meta k)] 'tabbar-forward)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)
+
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 
 (require 'powerline)
 (powerline-default-theme)
@@ -79,3 +74,17 @@
 
 ;; 以 y/n代表 yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
