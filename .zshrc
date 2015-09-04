@@ -104,4 +104,6 @@ if [ -f $HOME/.boot2docker_profile ]; then
     source $HOME/.boot2docker_profile
 fi
 
+source /usr/local/bin/virtualenvwrapper.sh
+
 alias vim=nvim

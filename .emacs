@@ -1,29 +1,58 @@
-(require 'cl)
+t;;; package --- my emacs config
+
+;;; Commentary:
+;; flycheck says I must have a commentary.
+
+(require 'cl-lib)
 (require 'package)
 
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;; Code:
+
+;; delete selection with a keypress
+(delete-selection-mode t)
+
+;; 以 y/n代表 yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; all backups goto ~/.backups instead in the current directory
+(setq backup-directory-alist (quote (("." . "~/.backups"))))
+
+;; smooth scroll
+(setq scroll-step 1
+  scroll-margin 0
+  scroll-preserve-screen-position 1
+  scroll-conservatively 100000)
+
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
 (defvar my-packages
-  '(better-defaults
-    tabbar
-    jedi
-    go-mode
-    markdown-mode
-    powerline
-    js2-mode
+  '(auto-complete
     coffee-mode
-    monokai-theme
+    flycheck
+    go-autocomplete
+    go-mode
+    vagrant-tramp
     haskell-mode
-    scss-mode)
+    jedi
+    js2-mode
+    markdown-mode
+    monokai-theme
+    powerline
+    rust-mode
+    scss-mode
+    virtualenvwrapper)
     "A list of packages
  to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()
-  (loop for p in my-packages
-        when (not (package-installed-p p)) do (return nil)
-        finally (return t)))
+  (cl-loop for p in my-packages
+        when (not (package-installed-p p)) do (cl-return nil)
+        finally (cl-return t)))
 
 (defun my-install-packages ()
   (unless (my-packages-installed-p)
@@ -40,51 +69,37 @@
 
 (load-theme 'monokai t)
 
+(menu-bar-mode 0)
+
+(ido-mode t)
+(setq ido-enable-flex-matching t)
+
 (setq inhibit-startup-message t)
 
 (setq visible-bell ())
+
+(show-paren-mode 1)
+
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+(require 'virtualenvwrapper)
+(venv-initialize-interactive-shells) ;; if you want interactive shell support
+(venv-initialize-eshell) ;; if you want eshell support
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-
+; 
 (require 'powerline)
 (powerline-default-theme)
-;; all backups goto ~/.backups instead in the current directory
-(setq backup-directory-alist (quote (("." . "~/.backups"))))
 
-;; show line number
-; (global-linum-mode t)
-; (custom-set-variables
-;   '(linum-format (quote "%2d \u2502")))
 
-;; smooth scroll
-(setq scroll-step 1
-  scroll-margin 0
-  scroll-preserve-screen-position 1
-  scroll-conservatively 100000)
+(eval-after-load 'tramp
+  '(vagrant-tramp-enable))
 
-;;
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
-;; delete selection with a keypress
-(delete-selection-mode t)
-
-;; 以 y/n代表 yes/no
-(fset 'yes-or-no-p 'y-or-n-p)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(require 'auto-complete)
+(require 'go-autocomplete)
