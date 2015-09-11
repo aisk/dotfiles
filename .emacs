@@ -1,4 +1,4 @@
-t;;; package --- my emacs config
+;;; package --- my emacs config
 
 ;;; Commentary:
 ;; flycheck says I must have a commentary.
@@ -40,7 +40,7 @@ t;;; package --- my emacs config
     haskell-mode
     jedi
     js2-mode
-    markdown-mode
+    ; markdown-mode
     monokai-theme
     powerline
     rust-mode
@@ -97,6 +97,8 @@ t;;; package --- my emacs config
 (require 'powerline)
 (powerline-default-theme)
 
+(add-to-list 'auto-mode-alist '("SConstruct" . python-mode))
+(add-to-list 'auto-mode-alist '("SConscript" . python-mode))
 
 (eval-after-load 'tramp
   '(vagrant-tramp-enable))

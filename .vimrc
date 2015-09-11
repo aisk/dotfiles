@@ -10,12 +10,12 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'zah/nimrod.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tpope/timl'
+Plug 'gilgigilgil/anderson.vim'
 Plug 'Blackrush/vim-gocode'
 Plug 'enthooz/vim-razor'
 Plug 'molokai'
 Plug 'digitaltoad/vim-jade'
 Plug 'cespare/vim-toml'
-Plug 'chriskempson/base16-vim'
 Plug 'ervandew/supertab'
 Plug 'Rip-Rip/clang_complete'
 Plug 'godlygeek/tabular'
@@ -25,7 +25,6 @@ Plug 'raichoo/purescript-vim'
 Plug 'Tagbar'
 Plug 'ctrlp.vim'
 Plug 'VimClojure'
-Plug 'w0ng/vim-hybrid'
 Plug 'kchmck/vim-coffee-script'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'antlr3.vim'
@@ -103,9 +102,7 @@ set hlsearch
 " line numbers
 set nu
 
-" colorscheme Tomorrow-Night
-let g:hybrid_use_iTerm_colors = 1
-colorscheme hybrid
+colorscheme Tomorrow-Night
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
