@@ -19,19 +19,20 @@
 
 ;; smooth scroll
 (setq scroll-step 1
-  scroll-margin 0
-  scroll-preserve-screen-position 1
-  scroll-conservatively 100000)
+      scroll-margin 0
+      scroll-preserve-screen-position 1
+      scroll-conservatively 100000)
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
 (defvar my-packages
-  '(auto-complete
+  '(ag
+    auto-complete
     coffee-mode
     flycheck
     go-autocomplete
@@ -40,19 +41,20 @@
     haskell-mode
     jedi
     js2-mode
-    ; markdown-mode
+    magit
+    markdown-mode
     monokai-theme
     powerline
     rust-mode
     scss-mode
     virtualenvwrapper)
-    "A list of packages
- to ensure are installed at launch.")
+  "A list of packages
+to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()
   (cl-loop for p in my-packages
-        when (not (package-installed-p p)) do (cl-return nil)
-        finally (cl-return t)))
+           when (not (package-installed-p p)) do (cl-return nil)
+           finally (cl-return t)))
 
 (defun my-install-packages ()
   (unless (my-packages-installed-p)
@@ -93,7 +95,7 @@
 (setq jedi:complete-on-dot t)
 
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-; 
+                                        ; 
 (require 'powerline)
 (powerline-default-theme)
 
@@ -105,3 +107,6 @@
 
 (require 'auto-complete)
 (require 'go-autocomplete)
+
+(provide '.emacs)
+;;; .emacs ends here
