@@ -4,58 +4,56 @@ filetype off                   " required!
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'a.vim'
-Plug 'davidhalter/jedi-vim'
-Plug 'dart-lang/dart-vim-plugin'
-Plug 'zah/nimrod.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'tpope/timl'
-Plug 'gilgigilgil/anderson.vim'
 Plug 'Blackrush/vim-gocode'
-Plug 'enthooz/vim-razor'
-Plug 'molokai'
-Plug 'digitaltoad/vim-jade'
-Plug 'cespare/vim-toml'
-Plug 'ervandew/supertab'
-Plug 'Rip-Rip/clang_complete'
-Plug 'godlygeek/tabular'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'bling/vim-airline'
-Plug 'raichoo/purescript-vim'
+Plug 'Rip-Rip/clang_complete'
+Plug 'Superbil/llvm.vim'
 Plug 'Tagbar'
-Plug 'ctrlp.vim'
 Plug 'VimClojure'
-Plug 'kchmck/vim-coffee-script'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'Yggdroot/indentLine'
+Plug 'a.vim'
 Plug 'antlr3.vim'
+Plug 'arc.vim'
+Plug 'bling/vim-airline'
+Plug 'briancollins/vim-jst'
+Plug 'cespare/vim-toml'
+Plug 'ctrlp.vim'
+Plug 'dag/vim2hs'
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'davidhalter/jedi-vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'ekalinin/Dockerfile.vim'
+Plug 'enthooz/vim-razor'
+Plug 'ervandew/supertab'
+Plug 'fishman/vim-vala'
+Plug 'fugitive.vim'
+Plug 'gilgigilgil/anderson.vim'
+Plug 'godlygeek/tabular'
+Plug 'guns/vim-clojure-static'
+Plug 'hylang/vim-hy'
+Plug 'jdevera/vim-protobuf-syntax'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'juvenn/mustache.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
+Plug 'mhinz/vim-startify'
+Plug 'phildawes/racer'
+Plug 'raichoo/purescript-vim'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'dag/vim2hs'
-Plug 'fugitive.vim'
-Plug 'scrooloose/syntastic'
-Plug 'jdevera/vim-protobuf-syntax'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'juvenn/mustache.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'fishman/vim-vala'
 Plug 'scons.vim'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/syntastic'
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'toyamarinyon/vim-swift'
-Plug 'arc.vim'
+Plug 'tpope/timl'
+Plug 'trusktr/seti.vim'
 Plug 'wlangstroth/vim-racket'
-Plug 'hylang/vim-hy'
-Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'guns/vim-clojure-static'
-Plug 'mhinz/vim-startify'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'briancollins/vim-jst'
-Plug 'Superbil/llvm.vim'
-Plug 'phildawes/racer'
-" Plug 'mxw/vim-jsx'
+Plug 'zah/nimrod.vim'
 
 call plug#end()
 
@@ -103,7 +101,7 @@ set hlsearch
 " line numbers
 set nu
 
-colorscheme Tomorrow-Night
+colorscheme seti
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
@@ -111,7 +109,7 @@ if has('gui_running')
     set guioptions+=r "显示右侧滚动条
 endif
 
-if &term =~? 'mlterm\|xterm\|screen-256'
+if &term =~? 'mlterm\|xterm\|screen-256\|nvim'
     let &t_Co = 256
 endif
 

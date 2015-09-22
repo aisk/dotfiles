@@ -69,6 +69,13 @@ to ensure are installed at launch.")
 
 (my-install-packages)
 
+(defun toggle-fullscreen ()
+  "Toggle full screen"
+  (interactive)
+  (set-frame-parameter
+     nil 'fullscreen
+     (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
+
 (load-theme 'monokai t)
 
 (menu-bar-mode 0)
@@ -77,6 +84,8 @@ to ensure are installed at launch.")
 (setq ido-enable-flex-matching t)
 
 (setq inhibit-startup-message t)
+
+(setq js-indent-level 2)
 
 (setq visible-bell ())
 
