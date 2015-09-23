@@ -52,6 +52,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'toyamarinyon/vim-swift'
 Plug 'tpope/timl'
 Plug 'trusktr/seti.vim'
+Plug 'w0ng/vim-hybrid'
 Plug 'wlangstroth/vim-racket'
 Plug 'zah/nimrod.vim'
 
@@ -101,7 +102,7 @@ set hlsearch
 " line numbers
 set nu
 
-colorscheme seti
+colorscheme hybrid
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
