@@ -39,6 +39,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
 Plug 'mhinz/vim-startify'
+Plug 'morhetz/gruvbox'
 Plug 'phildawes/racer'
 Plug 'raichoo/purescript-vim'
 Plug 'rking/ag.vim'
@@ -102,7 +103,8 @@ set hlsearch
 " line numbers
 set nu
 
-colorscheme hybrid
+colorscheme gruvbox
+set background=dark
 
 if has('gui_running')
     set guifont=Monaco\ for\ Powerline:h12
