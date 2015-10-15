@@ -1,10 +1,9 @@
-set nocompatible               " be iMproved
-filetype on                    " 
-filetype off                   " required!
+set nocompatible
+filetype on
+syntax enable
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Blackrush/vim-gocode'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
 Plug 'Superbil/llvm.vim'
@@ -25,6 +24,7 @@ Plug 'digitaltoad/vim-jade'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'enthooz/vim-razor'
 Plug 'ervandew/supertab'
+Plug 'fatih/vim-go'
 Plug 'fishman/vim-vala'
 Plug 'fugitive.vim'
 Plug 'gilgigilgil/anderson.vim'
@@ -38,6 +38,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
+Plug 'marijnh/tern_for_vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'phildawes/racer'
@@ -73,6 +74,11 @@ autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType slim setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
+set cursorline
+set wildmenu
+set lazyredraw
+set showmatch
+
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 au bufreadpre,bufnewfile *.arc set ft=arc
 au bufreadpre,bufnewfile *SConstruct set ft=scons
@@ -85,9 +91,7 @@ map ,n :NERDTreeToggle<CR>
 
 cmap w!! %!sudo tee > /dev/null %
 
-syntax on
-
-filetype plugin indent on
+filetype indent on
 
 set backspace=indent,eol,start  " wtf?
 
@@ -96,7 +100,6 @@ set ls=2
 
 " incremental search
 set incsearch
-
 " highlighted search results
 set hlsearch
 
@@ -120,7 +123,7 @@ endif
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
 " clang path on osx
-let s:clang_library_path='/Library/Developer/CommandLineTools/usr/lib'
+let s:clang_library_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 if isdirectory(s:clang_library_path)
     let g:clang_library_path=s:clang_library_path
 endif
@@ -140,35 +143,9 @@ let g:indentLine_color_term = 239
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
+nnoremap <leader>a: Ag
 
-let g:tagbar_type_go = {
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-    \ }
+let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
 " syntastic
 let g:syntastic_check_on_open = 1

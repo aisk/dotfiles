@@ -1,3 +1,5 @@
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
+
 . `brew --prefix`/etc/profile.d/z.sh
 
 export GOPATH=~/Codes/go
