@@ -2,30 +2,26 @@ set nocompatible
 filetype on
 syntax enable
 
-call plug#begin('~/.vim/plugged')
+call plug#begin()
 
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
 Plug 'Superbil/llvm.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
-Plug 'Yggdroot/indentLine'
+Plug 'leafgarland/typescript-vim'
 Plug 'a.vim'
-Plug 'antlr3.vim'
 Plug 'arc.vim'
 Plug 'bling/vim-airline'
-Plug 'briancollins/vim-jst'
 Plug 'cespare/vim-toml'
 Plug 'ctrlp.vim'
 Plug 'dag/vim2hs'
-Plug 'dart-lang/dart-vim-plugin'
 Plug 'davidhalter/jedi-vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'enthooz/vim-razor'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
-Plug 'fishman/vim-vala'
 Plug 'fugitive.vim'
 Plug 'gilgigilgil/anderson.vim'
 Plug 'godlygeek/tabular'
@@ -38,10 +34,9 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
-Plug 'marijnh/tern_for_vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
-Plug 'phildawes/racer'
+Plug 'phildawes/racer', { 'do': 'cargo build --release' }
 Plug 'raichoo/purescript-vim'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
@@ -52,11 +47,7 @@ Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'toyamarinyon/vim-swift'
-Plug 'tpope/timl'
-Plug 'trusktr/seti.vim'
-Plug 'w0ng/vim-hybrid'
 Plug 'wlangstroth/vim-racket'
-Plug 'zah/nimrod.vim'
 
 call plug#end()
 
@@ -78,6 +69,10 @@ set cursorline
 set wildmenu
 set lazyredraw
 set showmatch
+
+if has('nvim') " Activate clipboard for neovim
+  set clipboard+=unnamedplus
+endif
 
 au bufreadpre,bufnewfile *.cf set ft=lbnf
 au bufreadpre,bufnewfile *.arc set ft=arc
@@ -106,18 +101,22 @@ set hlsearch
 " line numbers
 set nu
 
+let g:gruvbox_italic=1
+
 colorscheme gruvbox
 set background=dark
 
-if has('gui_running')
-    set guifont=Monaco\ for\ Powerline:h12
-    set guioptions-=L "隐藏左侧滚动条
-    set guioptions+=r "显示右侧滚动条
-endif
+" if has('gui_running')
+"     set guifont=Monaco\ for\ Powerline:h12
+"     set guioptions-=L "隐藏左侧滚动条
+"     set guioptions+=r "显示右侧滚动条
+" endif
 
-if &term =~? 'mlterm\|xterm\|screen-256\|nvim'
-    let &t_Co = 256
-endif
+" if &term =~? 'mlterm\|xterm\|screen-256\|nvim'
+"     let &t_Co = 256
+" endif
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -138,7 +137,7 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 let g:EasyMotion_leader_key = '<Leader>'
 
-let g:indentLine_color_term = 239
+let g:indentLine_color_term = 001
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -177,3 +176,7 @@ let g:tagbar_type_rust = {
     \'i:impls,trait implementations',
   \]
 \}
+
+let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
+
+highlight Comment cterm=italic

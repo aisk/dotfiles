@@ -30,6 +30,8 @@
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
+(setq ns-use-native-fullscreen nil)
+
 (defvar my-packages
   '(ag
     auto-complete
@@ -37,15 +39,14 @@
     flycheck
     go-autocomplete
     go-mode
-    vagrant-tramp
     haskell-mode
     jedi
     js2-mode
     magit
     markdown-mode
-    monokai-theme
     powerline
     rust-mode
+    gruvbox-theme
     scss-mode
     virtualenvwrapper)
   "A list of packages
@@ -76,7 +77,7 @@ to ensure are installed at launch.")
      nil 'fullscreen
      (when (not (frame-parameter nil 'fullscreen)) 'fullboth)))
 
-(load-theme 'monokai t)
+(load-theme 'gruvbox t)
 
 (menu-bar-mode 0)
 
