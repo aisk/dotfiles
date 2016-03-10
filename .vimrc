@@ -5,7 +5,9 @@ syntax enable
 call plug#begin()
 
 Plug 'Lokaltog/vim-easymotion'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'Rip-Rip/clang_complete'
+Plug 'wakatime/vim-wakatime'
 Plug 'Superbil/llvm.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
@@ -15,7 +17,6 @@ Plug 'arc.vim'
 Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
 Plug 'ctrlp.vim'
-Plug 'dag/vim2hs'
 Plug 'davidhalter/jedi-vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'ekalinin/Dockerfile.vim'
@@ -23,15 +24,15 @@ Plug 'enthooz/vim-razor'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'fugitive.vim'
+Plug 'jreybert/vimagit'
 Plug 'gilgigilgil/anderson.vim'
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-clojure-static'
 Plug 'hylang/vim-hy'
 Plug 'jdevera/vim-protobuf-syntax'
-Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
 Plug 'juvenn/mustache.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'kien/rainbow_parentheses.vim'
 Plug 'lbnf.vim'
 Plug 'less.vim'
 Plug 'mhinz/vim-startify'
@@ -42,7 +43,8 @@ Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scons.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'benekastah/neomake'
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
 Plug 'terryma/vim-multiple-cursors'
@@ -147,15 +149,17 @@ nnoremap <leader>a: Ag
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
 
 " syntastic
-let g:syntastic_check_on_open = 1
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
-let g:syntastic_python_flake8_args = "--ignore=E501"
-let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'java'] }
-" let g:syntastic_javascript_checkers = []
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_cpp_compiler = 'clang++'
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+" let g:syntastic_python_flake8_args = "--ignore=E501"
+" let g:syntastic_mode_map = { 'passive_filetypes': ['html', 'java'] }
 
 " ctrlp
 let g:ctrlp_extensions = ['tag']
+
+" hy
+let g:hy_enable_conceal = 1
 
 " react
 let g:jsx_ext_required = 0
@@ -180,3 +184,16 @@ let g:tagbar_type_rust = {
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 
 highlight Comment cterm=italic
+
+let g:javascript_conceal_function   = "ƒ"
+let g:javascript_conceal_null       = "ø"
+let g:javascript_conceal_this       = "@"
+let g:javascript_conceal_return     = "⇚"
+let g:javascript_conceal_undefined  = "¿"
+let g:javascript_conceal_NaN        = "ℕ"
+let g:javascript_conceal_prototype  = "¶"
+let g:javascript_conceal_static     = "•"
+let g:javascript_conceal_super      = "Ω"
+
+" vimclojure
+let g:vimclojure#ParenRainbow = 1
