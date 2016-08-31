@@ -10,9 +10,6 @@ if [ -d ~/.pyenv ]; then
     eval "$(pyenv init -)"
 fi
 
-source /usr/local/bin/virtualenvwrapper.sh
-alias vim=nvim
-
 # alias ls="ls -G"
 # bindkey -e
 # 

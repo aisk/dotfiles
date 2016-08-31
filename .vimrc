@@ -5,49 +5,44 @@ syntax enable
 call plug#begin()
 
 Plug 'Lokaltog/vim-easymotion'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'Rip-Rip/clang_complete'
-Plug 'wakatime/vim-wakatime'
 Plug 'Superbil/llvm.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
-Plug 'leafgarland/typescript-vim'
 Plug 'a.vim'
 Plug 'arc.vim'
+Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'cespare/vim-toml'
 Plug 'ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'digitaltoad/vim-jade'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'enthooz/vim-razor'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go'
 Plug 'fugitive.vim'
-Plug 'jreybert/vimagit'
-Plug 'gilgigilgil/anderson.vim'
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-clojure-static'
 Plug 'hylang/vim-hy'
 Plug 'jdevera/vim-protobuf-syntax'
-Plug 'pangloss/vim-javascript'
 Plug 'juvenn/mustache.vim'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lbnf.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'less.vim'
 Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
+Plug 'neovimhaskell/haskell-vim'
+Plug 'pangloss/vim-javascript'
 Plug 'phildawes/racer', { 'do': 'cargo build --release' }
 Plug 'raichoo/purescript-vim'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scons.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-" Plug 'scrooloose/syntastic'
-Plug 'benekastah/neomake'
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'toyamarinyon/vim-swift'
 Plug 'wlangstroth/vim-racket'
 
@@ -167,20 +162,6 @@ let g:jsx_ext_required = 0
 " racer
 let $RUST_SRC_PATH="/Users/asaka/Codes/rust/src/"
 
-let g:tagbar_type_rust = {
-  \ 'ctagstype' : 'rust',
-  \ 'kinds' : [
-    \'T:types,type definitions',
-    \'f:functions,function definitions',
-    \'g:enum,enumeration names',
-    \'s:structure names',
-    \'m:modules,module names',
-    \'c:consts,static constants',
-    \'t:traits,traits',
-    \'i:impls,trait implementations',
-  \]
-\}
-
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 
 highlight Comment cterm=italic
@@ -197,3 +178,6 @@ let g:javascript_conceal_super      = "Ω"
 
 " vimclojure
 let g:vimclojure#ParenRainbow = 1
+
+" neomake
+autocmd! BufWritePost * Neomake
