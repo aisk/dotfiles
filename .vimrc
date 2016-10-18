@@ -43,7 +43,7 @@ Plug 'scons.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
-Plug 'toyamarinyon/vim-swift'
+Plug 'bumaociyuan/vim-swift'
 Plug 'wlangstroth/vim-racket'
 
 call plug#end()

@@ -25,12 +25,12 @@
 
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
+(setq ns-use-native-fullscreen nil)
 
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (package-initialize)
-(setq url-http-attempt-keepalives nil)
 
-(setq ns-use-native-fullscreen nil)
+; (setq ns-use-native-fullscreen nil)
 
 (defvar my-packages
   '(ag
@@ -42,15 +42,12 @@
     haskell-mode
     jedi
     js2-mode
-    magit
     markdown-mode
     powerline
     rust-mode
     gruvbox-theme
-    scss-mode
-    virtualenvwrapper)
-  "A list of packages
-to ensure are installed at launch.")
+    scss-mode)
+  "A list of packages to ensure are installed at launch.")
 
 (defun my-packages-installed-p ()
   (cl-loop for p in my-packages
@@ -71,7 +68,7 @@ to ensure are installed at launch.")
 (my-install-packages)
 
 (defun toggle-fullscreen ()
-  "Toggle full screen"
+  "Toggle full screen."
   (interactive)
   (set-frame-parameter
      nil 'fullscreen
@@ -97,10 +94,6 @@ to ensure are installed at launch.")
 
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-(require 'virtualenvwrapper)
-(venv-initialize-interactive-shells) ;; if you want interactive shell support
-(venv-initialize-eshell) ;; if you want eshell support
-
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)
 
@@ -111,9 +104,6 @@ to ensure are installed at launch.")
 
 (add-to-list 'auto-mode-alist '("SConstruct" . python-mode))
 (add-to-list 'auto-mode-alist '("SConscript" . python-mode))
-
-(eval-after-load 'tramp
-  '(vagrant-tramp-enable))
 
 (require 'auto-complete)
 (require 'go-autocomplete)
