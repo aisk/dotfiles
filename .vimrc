@@ -35,7 +35,7 @@ Plug 'mhinz/vim-startify'
 Plug 'morhetz/gruvbox'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
-Plug 'phildawes/racer', { 'do': 'cargo build --release' }
+Plug 'racer-rust/vim-racer'
 Plug 'raichoo/purescript-vim'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
@@ -136,8 +136,8 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 001
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline_powerline_fonts = 0
 
 nnoremap <leader>a: Ag
 
@@ -160,7 +160,8 @@ let g:hy_enable_conceal = 1
 let g:jsx_ext_required = 0
 
 " racer
-let $RUST_SRC_PATH="/Users/asaka/Codes/rust/src/"
+let $RUST_SRC_PATH = "~/Codes/rust/src/"
+let g:racer_cmd = "~/.cargo/bin/racer"
 
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 
@@ -181,3 +182,6 @@ let g:vimclojure#ParenRainbow = 1
 
 " neomake
 autocmd! BufWritePost * Neomake
+
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
