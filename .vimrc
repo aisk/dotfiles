@@ -7,6 +7,7 @@ call plug#begin()
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
 Plug 'Superbil/llvm.vim'
+Plug 'arrufat/vala.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
 Plug 'a.vim'
@@ -109,11 +110,9 @@ set background=dark
 "     set guioptions+=r "显示右侧滚动条
 " endif
 
-" if &term =~? 'mlterm\|xterm\|screen-256\|nvim'
-"     let &t_Co = 256
-" endif
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+set termguicolors
 
 " last position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -137,7 +136,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:indentLine_color_term = 001
 
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 0
+let g:airline_powerline_fonts = 1
 
 nnoremap <leader>a: Ag
 
@@ -162,20 +161,9 @@ let g:jsx_ext_required = 0
 " racer
 let $RUST_SRC_PATH = "~/Codes/rust/src/"
 let g:racer_cmd = "~/.cargo/bin/racer"
+let g:racer_experimental_completer = 1
 
 let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
-
-highlight Comment cterm=italic
-
-let g:javascript_conceal_function   = "ƒ"
-let g:javascript_conceal_null       = "ø"
-let g:javascript_conceal_this       = "@"
-let g:javascript_conceal_return     = "⇚"
-let g:javascript_conceal_undefined  = "¿"
-let g:javascript_conceal_NaN        = "ℕ"
-let g:javascript_conceal_prototype  = "¶"
-let g:javascript_conceal_static     = "•"
-let g:javascript_conceal_super      = "Ω"
 
 " vimclojure
 let g:vimclojure#ParenRainbow = 1
