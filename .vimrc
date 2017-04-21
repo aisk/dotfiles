@@ -7,13 +7,14 @@ call plug#begin()
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
 Plug 'Superbil/llvm.vim'
-Plug 'arrufat/vala.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
 Plug 'a.vim'
 Plug 'arc.vim'
+Plug 'arrufat/vala.vim'
 Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
+Plug 'bumaociyuan/vim-swift'
 Plug 'cespare/vim-toml'
 Plug 'ctrlp.vim'
 Plug 'davidhalter/jedi-vim'
@@ -28,6 +29,7 @@ Plug 'guns/vim-clojure-static'
 Plug 'hylang/vim-hy'
 Plug 'jdevera/vim-protobuf-syntax'
 Plug 'juvenn/mustache.vim'
+Plug 'kballard/vim-fish'
 Plug 'kchmck/vim-coffee-script'
 Plug 'lbnf.vim'
 Plug 'leafgarland/typescript-vim'
@@ -44,7 +46,7 @@ Plug 'scons.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
-Plug 'bumaociyuan/vim-swift'
+Plug 'ternjs/tern_for_vim'
 Plug 'wlangstroth/vim-racket'
 
 call plug#end()
@@ -136,7 +138,7 @@ let g:EasyMotion_leader_key = '<Leader>'
 let g:indentLine_color_term = 001
 
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 
 nnoremap <leader>a: Ag
 
