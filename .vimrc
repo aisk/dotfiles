@@ -6,6 +6,7 @@ call plug#begin()
 
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Superbil/llvm.vim'
 Plug 'Tagbar'
 Plug 'VimClojure'
@@ -17,7 +18,6 @@ Plug 'bling/vim-airline'
 Plug 'bumaociyuan/vim-swift'
 Plug 'cespare/vim-toml'
 Plug 'ctrlp.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'digitaltoad/vim-jade'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
@@ -46,7 +46,6 @@ Plug 'scons.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'sjl/vitality.vim'
 Plug 'slim-template/vim-slim'
-Plug 'ternjs/tern_for_vim'
 Plug 'wlangstroth/vim-racket'
 
 call plug#end()
@@ -175,3 +174,5 @@ autocmd! BufWritePost * Neomake
 
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+
+let g:deoplete#enable_at_startup = 1
