@@ -7,9 +7,7 @@ call plug#begin()
 Plug 'Lokaltog/vim-easymotion'
 Plug 'Rip-Rip/clang_complete'
 Plug 'Superbil/llvm.vim'
-Plug 'majutsushi/tagbar'
 Plug 'arrufat/vala.vim'
-Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'bumaociyuan/vim-swift'
 Plug 'cespare/vim-toml'
@@ -18,7 +16,6 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'enthooz/vim-razor'
 Plug 'fatih/vim-go'
-Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-clojure-static'
 Plug 'hylang/vim-hy'
@@ -27,6 +24,7 @@ Plug 'juvenn/mustache.vim'
 Plug 'kballard/vim-fish'
 Plug 'kchmck/vim-coffee-script'
 Plug 'leafgarland/typescript-vim'
+Plug 'majutsushi/tagbar'
 Plug 'morhetz/gruvbox'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'pangloss/vim-javascript'
@@ -34,6 +32,8 @@ Plug 'racer-rust/vim-racer'
 Plug 'rking/ag.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
 Plug 'wlangstroth/vim-racket'
 
 call plug#end()
@@ -117,15 +117,12 @@ let g:EasyMotion_leader_key = '<Leader>'
 
 let g:indentLine_color_term = 001
 
-let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 0
 
 nnoremap <leader>a: Ag
 
 let g:SuperTabContextDefaultCompletionType = '<c-x><c-u>'
-
-" ctrlp
-let g:ctrlp_extensions = ['tag']
 
 " hy
 let g:hy_enable_conceal = 1
@@ -142,9 +139,6 @@ let g:tlist_coffee_settings = 'coffee;f:function;v:variable'
 
 " vimclojure
 let g:vimclojure#ParenRainbow = 1
-
-" neomake
-autocmd! BufWritePost * Neomake
 
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
