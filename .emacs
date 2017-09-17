@@ -33,8 +33,7 @@
 ; (setq ns-use-native-fullscreen nil)
 
 (defvar my-packages
-  '(ag
-    auto-complete
+  '(auto-complete
     coffee-mode
     flycheck
     go-autocomplete
@@ -110,3 +109,17 @@
 
 (provide '.emacs)
 ;;; .emacs ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (scss-mode gruvbox-theme rust-mode powerline markdown-mode js2-mode jedi haskell-mode go-mode go-autocomplete flycheck coffee-mode auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
